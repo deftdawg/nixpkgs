@@ -39,11 +39,11 @@ buildPythonPackage rec {
 
   pyproject = true;
 
-  patches = [
-    # With Darwin SDK 11 we cannot include vecLib/cblas_new.h, this needs to wait for PR #229210
-    # In the meantime, pretend Accelerate is not available and use blas/lapack instead.
-    ./disable-accelerate.patch
-  ];
+#  patches = [
+#    # With Darwin SDK 11 we cannot include vecLib/cblas_new.h, this needs to wait for PR #229210
+#    # In the meantime, pretend Accelerate is not available and use blas/lapack instead.
+#    ./disable-accelerate.patch
+#  ];
 
   postPatch = ''
     substituteInPlace CMakeLists.txt \
