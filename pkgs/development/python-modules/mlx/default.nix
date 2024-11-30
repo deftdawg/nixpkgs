@@ -45,10 +45,6 @@ buildPythonPackage rec {
 #    # In the meantime, pretend Accelerate is not available and use blas/lapack instead.
 #    ./disable-accelerate.patch
 #  ];
-  preBuild = ''
-    pip install nanobind==2.1.0
-  '';
-
   postPatch = ''
     substituteInPlace CMakeLists.txt \
       --replace "/usr/bin/xcrun" "${xcbuild}/bin/xcrun" \
@@ -74,12 +70,12 @@ buildPythonPackage rec {
     gguf-tools
     nlohmann_json
     setuptools
+    nanobind
   ];
 
   buildInputs = [
     blas
     lapack
-    python3Packages.nanobind
   ];
 
   meta = with lib; {
