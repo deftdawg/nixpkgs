@@ -2,6 +2,7 @@
   lib,
   fetchFromGitHub,
   buildPythonPackage,
+  python3Packages,
   pybind11,
   cmake,
   xcbuild,
