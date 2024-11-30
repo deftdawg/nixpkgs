@@ -116,7 +116,6 @@ buildPythonPackage rec {
     hexdump
     hypothesis
     librosa
-    nanobind
     networkx
     numpy
     onnx
