@@ -40,11 +40,6 @@ buildPythonPackage rec {
 
   pyproject = true;
 
-  propagatedBuildInputs = [
-    python3Packages.nanobind  # Add nanobind as a propagated build input
-    # Add other dependencies if necessary
-  ];
-
 #  patches = [
 #    # With Darwin SDK 11 we cannot include vecLib/cblas_new.h, this needs to wait for PR #229210
 #    # In the meantime, pretend Accelerate is not available and use blas/lapack instead.
@@ -81,6 +76,7 @@ buildPythonPackage rec {
   buildInputs = [
     blas
     lapack
+    python3Packages.nanobind
   ];
 
   meta = with lib; {
