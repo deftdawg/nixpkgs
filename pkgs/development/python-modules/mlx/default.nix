@@ -9,6 +9,7 @@
   blas,
   lapack,
   setuptools,
+  nanobind,
 }:
 
 let
