@@ -54,12 +54,13 @@ buildPythonPackage rec {
 
   env = {
     PYPI_RELEASE = version;
+    PYTHON_BUILD_FLAGS = "--no-isolation";
     # we can't use Metal compilation with Darwin SDK 11
-    CMAKE_ARGS = toString [
-      (lib.cmakeBool "MLX_BUILD_METAL" false)
-      (lib.cmakeOptionType "filepath" "FETCHCONTENT_SOURCE_DIR_GGUFLIB" "${gguf-tools}")
-      (lib.cmakeOptionType "filepath" "FETCHCONTENT_SOURCE_DIR_JSON" "${nlohmann_json}")
-    ];
+#    CMAKE_ARGS = toString [
+#      (lib.cmakeBool "MLX_BUILD_METAL" false)
+#      (lib.cmakeOptionType "filepath" "FETCHCONTENT_SOURCE_DIR_GGUFLIB" "${gguf-tools}")
+#      (lib.cmakeOptionType "filepath" "FETCHCONTENT_SOURCE_DIR_JSON" "${nlohmann_json}")
+#    ];
   };
 
   nativeBuildInputs = [
