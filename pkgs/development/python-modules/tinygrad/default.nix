@@ -206,6 +206,6 @@ buildPythonPackage rec {
     license = lib.licenses.mit;
     maintainers = with lib.maintainers; [ GaetanLepage ];
     # Tests segfault on darwin
-    badPlatforms = [ lib.systems.inspect.patterns.isDarwin ];
+    # badPlatforms = [ lib.systems.inspect.patterns.isDarwin ];
   };
 }
