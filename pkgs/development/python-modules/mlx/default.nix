@@ -70,7 +70,7 @@ buildPythonPackage rec {
     gguf-tools
     nlohmann_json
     setuptools
-    nanobind
+    python3Packages.nanobind
   ];
 
   buildInputs = [
