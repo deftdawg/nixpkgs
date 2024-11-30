@@ -68,6 +68,7 @@ buildPythonPackage rec {
     xcbuild
     zsh
     gguf-tools
+    nanobind
     nlohmann_json
     setuptools
   ];
