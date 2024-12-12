@@ -2,7 +2,6 @@
   lib,
   rustPlatform,
   fetchFromGitHub,
-  clang,
   cmake,
   copyDesktopItems,
   curl,
@@ -90,13 +89,13 @@ let
 in
 rustPlatform.buildRustPackage rec {
   pname = "zed-editor";
-  version = "0.163.2";
+  version = "0.165.4";
 
   src = fetchFromGitHub {
     owner = "zed-industries";
     repo = "zed";
     rev = "refs/tags/v${version}";
-    hash = "sha256-Bt6xbtkBYBuZW7hQ40UZwOjZJ7tqc9xL6XTvaD3KQjs=";
+    hash = "sha256-g+ZHchlxeNDkxUM306OK3BsjrvO3snF4vcQQZJSIhLc=";
   };
 
   patches =
@@ -118,11 +117,10 @@ rustPlatform.buildRustPackage rec {
     ];
 
   useFetchCargoVendor = true;
-  cargoHash = "sha256-QvvuVyPc+8Km8psdLQFc4PnSWFZsfkKuxzRK17HjEvE=";
+  cargoHash = "sha256-ZNXvuHX9b3T58FUs9TjpfiGYNr9J3IDbz2JE6Vy7Sg0=";
 
   nativeBuildInputs =
     [
-      clang
       cmake
       copyDesktopItems
       curl
